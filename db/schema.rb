@@ -10,14 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_032622) do
+ActiveRecord::Schema.define(version: 2020_05_22_011945) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
     t.string "city"
+    t.integer "zipcode"
+    t.text "address"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "building"
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,12 +63,18 @@ ActiveRecord::Schema.define(version: 2020_05_21_032622) do
   end
 
   create_table "item_payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+<<<<<<< HEAD
     t.string "item", null: false
     t.integer "price", null: false
     t.string "pay_method", null: false
     t.string "shipping", null: false
+=======
+>>>>>>> 19121c29d9bb79f53cc82d6ad801d47a0948b091
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "item_id"
+    t.integer "saler_id"
+    t.integer "buyer_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,21 +85,16 @@ ActiveRecord::Schema.define(version: 2020_05_21_032622) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "status_id"
-  end
-
-  create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "ship_base", null: false
-    t.string "region"
     t.integer "category_id"
     t.integer "shipping_id"
+    t.integer "status_id"
     t.integer "saler_id"
     t.integer "buyer_id"
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "ship_base", null: false
-    t.string "region", null: false
+    t.string "region"
     t.string "city"
     t.string "block"
     t.string "ship_method"
