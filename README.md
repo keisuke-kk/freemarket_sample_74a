@@ -16,7 +16,7 @@
 |birthdate|date|null: false|
 |phone|string|null: false|
 
-### Association
+### Associatio
 
 - has_one :address
 - has_one :credit_card
