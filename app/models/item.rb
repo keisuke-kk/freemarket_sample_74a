@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  
   belongs_to :user, optional: true
   belongs_to :category, optional: true
   belongs_to :brand, optional: true
@@ -21,7 +22,5 @@ class Item < ApplicationRecord
   validates :category_id, presence: true
   validates :user_id, presence: true
   validates :status_id, presence: true
-
-
 
 end

@@ -63,13 +63,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_020813) do
   end
 
   create_table "item_payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string "item", null: false
-    t.integer "price", null: false
-    t.string "pay_method", null: false
-    t.string "shipping", null: false
-=======
->>>>>>> 19121c29d9bb79f53cc82d6ad801d47a0948b091
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "item_id"
