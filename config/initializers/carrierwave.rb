@@ -19,7 +19,7 @@ CarrierWave.configure do |config|
     }
     config.fog_directory = ENV['AWS_S3_BUCKET']
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
-    CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
+    # CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
     # config.fog_directory  = 'f74a'
     # config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/f74a'
   end
